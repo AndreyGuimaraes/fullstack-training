@@ -1,0 +1,31 @@
+{
+  "name": "blog-back",
+  "version": "1.0.0",
+  "scripts": {
+    "pretest": "tslint --project tsconfig.json",
+    "test": "jest --runInBand --coverage",
+    "test:watch": "jest --watch",
+    "start": "tsc-watch --project tsconfig.json --onSuccess 'node ./dist/index.js'",
+    "build": "tsc --project tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/jest": "^26.0.0",
+    "@types/node": "^14.0.13",
+    "@types/supertest": "^2.0.9",
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.1.0",
+    "tsc-watch": "^4.2.8",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
