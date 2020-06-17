@@ -3,6 +3,7 @@
 You need the following 
 - [nvm][nvm]: you can install node directly, but nvm is highly recommended
 - node: `nvm install node`
+- `npm install`
 - tslint vscode extension
 
 # Commands
