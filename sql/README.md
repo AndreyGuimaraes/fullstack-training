@@ -4,6 +4,11 @@
 ```sh
 # run postgres using docker
 docker run --name pg-docker --rm -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:10
+# check the cointainer status
+docker ps -a
+# *if* you dont see any container named pg-docker try this command instead:
+docker run --name pg-docker --rm  -e "POSTGRES_PASSWORD=POSTGRES"-d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:10
+
 # run migrations
 flyway -configFiles=./flyway.conf migrate
 # enter psql terminal
