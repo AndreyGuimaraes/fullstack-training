@@ -3,7 +3,7 @@
 
 ```sh
 # run postgres using docker
-docker run --name pg-docker --rm -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postresql/data postgres:10
+docker run --name pg-docker --rm -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:10
 # run migrations
 flyway -configFiles=./flyway.conf migrate
 # enter psql terminal
