@@ -4,12 +4,10 @@
 ```sh
 # run postgres using docker
 docker run --name pg-docker --rm -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:10
-# check the cointainer status
-docker ps -a
-# *if* you dont see any container named pg-docker try this command instead:
-docker run --name pg-docker --rm  -e "POSTGRES_PASSWORD=POSTGRES" -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:10
-# change the postgres password in the ./sql/flyway.conf file to Ppostgres
-
+# for Ubuntu 20 and up you MUST use postgres 12 with password
+docker run --name pg-docker --rm -d -p 5432:5432 -e "POSTGRES_PASSWORD:postgres" -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+# before running migrations, change the password line in the flyway.conf file to postgres
+# you HAVE to create a db BEFORE running the migrations (see "Create database" above)
 # run migrations
 flyway -configFiles=./flyway.conf migrate
 # enter psql terminal
