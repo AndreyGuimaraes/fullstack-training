@@ -1,0 +1,3 @@
+SELECT * FROM posts
+ORDER BY pub_date DESC
+LIMIT 10;
